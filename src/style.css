@@ -1,0 +1,40 @@
+body {
+  margin: 100px 30px;
+  font-family: "Roboto", sans-serif;
+}
+h1,
+h2 {
+  font-size: 35px;
+  font-weight: bolder;
+  opacity: 0.9;
+}
+h2 {
+  padding-bottom: 20px;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+.search-form {
+  padding-bottom: 20px;
+}
+.weather-app {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.search-button {
+  border: 1px solid #dee2e6;
+}
+.current-conditions,
+.current-day {
+  margin: 0;
+  opacity: 0.8;
+  font-style: italic;
+  font-size: 18px;
+}

@@ -56,7 +56,7 @@ function showWeather(response) {
   cityElement.innerHTML = `${city}`;
 
   let temperatureElement = document.querySelector("#main-temp");
-  temperatureElement.innerHTML = `${temp}°C`;
+  temperatureElement.innerHTML = `${temp}`;
 
   let windSpeedElement = document.querySelector("#wind");
   windSpeedElement.innerHTML = `<i class="bi bi-wind"></i> Wind: ${windSpeed} km/h`;

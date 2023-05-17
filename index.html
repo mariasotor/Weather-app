@@ -27,61 +27,64 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form class="search-form" id="city-form">
-          <div class="row">
-            <div class="col-6">
-              <input
-                class="form-control"
-                type="search"
-                placeholder="Type a city"
-                autocomplete="off"
-                id="city-input"
-                autofocus="on"
-              />
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form class="search-form" id="city-form">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Type a city"
+                  autocomplete="off"
+                  id="city-input"
+                  autofocus="on"
+                />
+              </div>
+              <div class="col-3">
+                <button class="btn btn-light search-button" type="submit">
+                  Search
+                </button>
+              </div>
+              <div class="col-3">
+                <button
+                  class="btn btn-light search-button"
+                  type="button"
+                  id="current-location-button"
+                >
+                  Current
+                </button>
+              </div>
             </div>
-            <div class="col-3">
-              <button class="btn btn-light search-button" type="submit">
-                Search
-              </button>
-            </div>
-            <div class="col-3">
-              <button
-                class="btn btn-light search-button"
-                type="button"
-                id="current-location-button"
-              >
-                Current
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
 
-        <div class="row">
-          <div class="col-7">
-            <div class="current-day" id="day-time"></div>
-            <h1>
-              <span id="searched-city"></span>
-            </h1>
-            <h2>
-              <span id="main-temp"></span>
-            </h2>
-          </div>
-          <div class="col-5">
-            <ul class="current-conditions">
-              <li id="weather-description"></li>
-              <li><span id="wind"></span></li>
-              <li><span id="humidity"></span></li>
-            </ul>
+          <h1 id="searched-city"></h1>
+          <ul>
+            <li class="current-day" id="day-time"></li>
+            <li class="current-day" id="weather-description"></li>
+          </ul>
+          <div class="row">
+            <div class="col-7">
+              <h2>
+                <span id="main-temp"></span><small class="units">°C | °F</small>
+              </h2>
+            </div>
+            <div class="col-5">
+              <ul class="current-conditions">
+                <li id="weather-description"></li>
+                <li><span id="wind"></span></li>
+                <li><span id="humidity"></span></li>
+              </ul>
+            </div>
           </div>
         </div>
+        <footer>
+          <a href="https://github.com/mariasotor/Weather-app" target="_blank"
+            >Open-source code</a
+          >
+          by Maria Soto
+        </footer>
       </div>
-      <footer>
-        <a href="https://github.com/mariasotor/Weather-app" target="_blank"
-          >Open-source code,</a
-        >
-        by Maria Soto
-      </footer>
     </div>
     <script src="src/index.js"></script>
   </body>

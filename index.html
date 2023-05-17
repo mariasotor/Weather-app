@@ -59,21 +59,32 @@
           </form>
 
           <h1 id="searched-city"></h1>
-          <ul>
-            <li class="current-day" id="day-time"></li>
-            <li class="current-day" id="weather-description"></li>
-          </ul>
+          <div class="current-day">
+            <ul>
+              <li id="day-time"></li>
+              <li id="weather-description"></li>
+            </ul>
+          </div>
           <div class="row">
             <div class="col-7">
               <h2>
-                <span id="main-temp"></span><small class="units">°C | °F</small>
+                <div class="box-temperature">
+                  <img src="" alt="" id="main-icon" class="weather-icon" />
+                  <span id="main-temp"></span>
+                  <small class="units">°C | °F</small>
+                </div>
               </h2>
             </div>
             <div class="col-5">
               <ul class="current-conditions">
                 <li id="weather-description"></li>
-                <li><span id="wind"></span></li>
-                <li><span id="humidity"></span></li>
+                <li>
+                  <i class="bi bi-wind"></i> Wind: <span id="wind"></span> km/h
+                </li>
+                <li>
+                  <i class="bi bi-droplet"></i> Humidity:
+                  <span id="humidity"></span>%
+                </li>
               </ul>
             </div>
           </div>

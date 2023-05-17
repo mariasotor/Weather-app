@@ -41,33 +41,32 @@ function defineCity(event) {
 
 function showWeather(response) {
   let city = response.data.name; //can change to document.querySelector("#searched-city").innerhtml=response.data.name;
-
   let temp = response.data.main.temp;
   temp = Math.round(temp);
-
   let windSpeed = response.data.wind.speed;
   windSpeed = Math.round(windSpeed * 3.6);
-
   let humidity = response.data.main.humidity;
-
   let weatherDescription = response.data.weather[0].description;
+  let icon = response.data.weather[0].icon;
 
   let cityElement = document.querySelector("#searched-city");
   cityElement.innerHTML = `${city}`;
-
   let temperatureElement = document.querySelector("#main-temp");
   temperatureElement.innerHTML = `${temp}`;
-
   let windSpeedElement = document.querySelector("#wind");
-  windSpeedElement.innerHTML = `<i class="bi bi-wind"></i> Wind: ${windSpeed} km/h`;
-
+  windSpeedElement.innerHTML = `${windSpeed}`;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = `<i class="bi bi-droplet"></i> Humidity: ${humidity}%`;
-
+  humidityElement.innerHTML = `${humidity}`;
   let weatherDescriptionElement = document.querySelector(
     "#weather-description"
   );
   weatherDescriptionElement.innerHTML = `${weatherDescription}`;
+  let iconElement = document.querySelector("#main-icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", `${weatherDescription}`);
   //Day and time
   let currentDate = new Date();
   let dateElement = document.querySelector("#day-time");

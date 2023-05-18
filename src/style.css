@@ -20,8 +20,8 @@ ul {
 li {
   list-style: none;
 }
-li::first-letter {
-  text-transform: capitalize;
+p {
+  margin-bottom: 0;
 }
 a {
   text-decoration: none;
@@ -35,55 +35,23 @@ footer {
 }
 .weather-app {
   background-image: linear-gradient(
-    to right top,
-    #bee2ef,
-    #c4e4f3,
-    #cae6f6,
-    #d1e7f9,
-    #d7e9fc,
-    #dbebfd,
-    #deedfe,
-    #e2efff,
-    #e4f2fe,
-    #e7f4fe,
-    #eaf6fd,
-    #eef8fd
+    to right bottom,
+    #edf3fd,
+    #dfeafc,
+    #cfe2fb,
+    #bfdafa,
+    #aed2f9
   );
   border: 1px solid #dee2e6;
   border-radius: 10px;
   padding: 15px;
 }
+.overview-display {
+  padding: 0;
+}
 .box-temperature {
   display: flex;
-  flex-flow: row wrap;
-  padding-top: 20px;
-}
-#main-temp {
-  position: relative;
-  top: -15px;
-  left: -15px;
-}
-.weather-icon {
-  position: relative;
-  top: -20px;
-  left: -15px;
-  width: 65px;
-  height: 65px;
-}
-.current-day {
-  opacity: 0.8;
-  font-size: 18px;
-  line-height: 1;
-}
-.units {
-  position: relative;
-  font-size: 17px;
-  position: relative;
-  top: -9px;
-  left: -15px;
-}
-.search-button {
-  border: 1px solid #dee2e6;
+  align-items: center;
 }
 .box-temperature .active {
   color: #000;
@@ -92,4 +60,26 @@ footer {
 }
 .box-temperature .active:hover {
   text-decoration: none;
+}
+#weather-description {
+  display: inline-block;
+  text-transform: capitalize;
+}
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+.current-day {
+  opacity: 0.8;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.units {
+  position: relative;
+  font-size: 17px;
+  position: relative;
+  top: -9px;
+}
+.search-button {
+  border: 1px solid #dee2e6;
 }

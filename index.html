@@ -57,16 +57,30 @@
               </div>
             </div>
           </form>
-
-          <h1 id="searched-city"></h1>
-          <div class="current-day">
-            <ul>
-              <li id="day-time"></li>
-              <li id="weather-description"></li>
-            </ul>
-          </div>
           <div class="row">
-            <div class="col-7">
+            <div class="col-7 overview-diplay">
+              <h1 id="searched-city"></h1>
+              <div class="current-day">
+                <p>
+                  <span id="day-time"></span> |
+                  <span
+                    id="weather-description"
+                    class="weather-description"
+                  ></span>
+                </p>
+                <ul>
+                  <li>
+                    Wind:
+                    <span id="wind"></span> km/h
+                  </li>
+                  <li>
+                    Humidity:
+                    <span id="humidity"></span>%
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-5 overview-display">
               <h2>
                 <div class="box-temperature">
                   <img src="" alt="" id="main-icon" class="weather-icon" />
@@ -78,20 +92,9 @@
                 </div>
               </h2>
             </div>
-            <div class="col-5">
-              <ul class="current-conditions">
-                <li id="weather-description"></li>
-                <li>
-                  <i class="bi bi-wind"></i> Wind: <span id="wind"></span> km/h
-                </li>
-                <li>
-                  <i class="bi bi-droplet"></i> Humidity:
-                  <span id="humidity"></span>%
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
+
         <footer>
           <a href="https://github.com/mariasotor/Weather-app" target="_blank"
             >Open-source code</a

@@ -28,8 +28,9 @@ function formatDate(date) {
 //Display the name of the city on the result page and the current temperature of the city
 
 function searchCity(city) {
-  let apiKey = "6bec232055e3f161982b528c34084fba";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiKey = "236fbfee150ba34o7beftdbb466306c4";
+
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -40,13 +41,13 @@ function defineCity(event) {
 }
 
 function showWeather(response) {
-  let city = response.data.name; //can change to document.querySelector("#searched-city").innerhtml=response.data.name;
-  celsiusTemp = response.data.main.temp;
+  let city = response.data.city; //can change to document.querySelector("#searched-city").innerhtml=response.data.name;
+  celsiusTemp = response.data.temperature.current;
   let windSpeed = response.data.wind.speed;
   windSpeed = Math.round(windSpeed * 3.6);
-  let humidity = response.data.main.humidity;
-  let weatherDescription = response.data.weather[0].description;
-  let icon = response.data.weather[0].icon;
+  let humidity = response.data.temperature.humidity;
+  let weatherDescription = response.data.condition.description;
+  let icon = response.data.condition.icon;
 
   let cityElement = document.querySelector("#searched-city");
   cityElement.innerHTML = `${city}`;
@@ -63,7 +64,7 @@ function showWeather(response) {
   let iconElement = document.querySelector("#main-icon");
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
   );
   iconElement.setAttribute("alt", `${weatherDescription}`);
   //Day and time
@@ -83,8 +84,8 @@ function defineLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
 
-  let apiKey = "6bec232055e3f161982b528c34084fba";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiKey = "236fbfee150ba34o7beftdbb466306c4";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -118,4 +119,6 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelciusTemp);
 
-searchCity("New York");
+searchCity("Cali");
+
+//forecast

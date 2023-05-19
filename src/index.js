@@ -85,7 +85,7 @@ function defineLocation(position) {
   let lon = position.coords.longitude;
 
   let apiKey = "236fbfee150ba34o7beftdbb466306c4";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 

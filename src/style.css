@@ -65,9 +65,10 @@ footer {
 }
 .units {
   position: relative;
-  font-size: 17px;
+  font-size: 20px;
   position: relative;
-  top: -9px;
+  top: -14px;
+  left: -5px;
 }
 .search-button {
   border: 1px solid #dee2e6;

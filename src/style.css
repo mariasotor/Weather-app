@@ -11,7 +11,7 @@ h1 {
 
 h2 {
   padding: 10px 0;
-  font-size: 45px;
+  font-size: 60px;
 }
 ul {
   padding: 0;
@@ -73,9 +73,11 @@ footer {
   border: 1px solid #dee2e6;
 }
 .forecast {
+  margin-top: 15px;
   text-align: center;
   font-weight: bolder;
   opacity: 0.8;
+  font-size: 17px;
 }
 .forecast-temp {
   margin-top: 5px;

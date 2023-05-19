@@ -116,7 +116,7 @@ function showForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `           
@@ -146,4 +146,4 @@ function showForecast(response) {
 
   forecastElement.innerHTML = forecastHTML;
 }
-searchCity("Chicago");
+searchCity("Ottawa");

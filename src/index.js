@@ -67,6 +67,8 @@ function showWeather(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
   );
   iconElement.setAttribute("alt", `${weatherDescription}`);
+
+  defineCityForecast(city);
   //Day and time
   let currentDate = new Date();
   let dateElement = document.querySelector("#day-time");
@@ -119,6 +121,56 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelciusTemp);
 
-searchCity("Cali");
-
 //forecast
+function defineCityForecast(city) {
+  let apiKey = "236fbfee150ba34o7beftdbb466306c4";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function showForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `           
+              <div class="col">
+                <div class="forecast-day">
+                ${formatForecastDay(forecastDay.time)}
+                  </div>
+                <div class="forecast-temp">
+                  <span class="min-temp">${Math.round(
+                    forecastDay.temperature.minimum
+                  )}°</span>
+                  <span class="max-temp">${Math.round(
+                    forecastDay.temperature.maximum
+                  )}°</span>
+                </div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    forecastDay.condition.icon
+                  }.png"
+                  alt="${forecastDay.condition.description}"
+                  class="icon-forecast"
+                />
+                    </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+searchCity("Chicago");

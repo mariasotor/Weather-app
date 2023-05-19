@@ -23,9 +23,6 @@ li {
 p {
   margin-bottom: 0;
 }
-a {
-  text-decoration: none;
-}
 footer {
   font-size: 14px;
 }
@@ -52,14 +49,6 @@ footer {
 .box-temperature {
   display: flex;
   align-items: center;
-}
-.box-temperature .active {
-  color: #000;
-  opacity: 0.8;
-  cursor: default;
-}
-.box-temperature .active:hover {
-  text-decoration: none;
 }
 #weather-description {
   display: inline-block;

@@ -25,19 +25,22 @@ p {
 }
 footer {
   font-size: 14px;
+  text-align: center;
+  opacity: 0.7;
+}
+a {
+  text-decoration: none;
 }
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
 }
 .weather-app {
-  background-image: linear-gradient(
-    to right bottom,
-    #edf3fd,
-    #dfeafc,
-    #cfe2fb,
-    #bfdafa,
-    #aed2f9
+  background: rgb(198, 234, 244);
+  background: linear-gradient(
+    90deg,
+    rgba(198, 234, 244, 0.36952998379254454) 0%,
+    rgba(26, 101, 191, 0.17132790616246496) 68%
   );
   border: 1px solid #dee2e6;
   border-radius: 10px;
